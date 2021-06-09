@@ -1,0 +1,9 @@
+Comando maven:
+mvn clean package spring-boot run
+
+#Atualizar DB
+mvn flyway:migrate
+
+SET GLOBAL time_zone = '+3:00';
+
+http://localhost:8080/swagger-ui.html

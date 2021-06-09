@@ -5,7 +5,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-import br.com.erudio.exception.UnsuportedMathOperationException;
+import br.com.erudio.exception.ResourceNotFoundException;
 import br.com.erudio.math.SimpleMath;
 import br.com.erudio.request.converters.NumberConverter;
 
@@ -58,7 +58,7 @@ public class MathController {
 
 	private void validarNumeros(String numberOne, String numberTwo) {
 		if (!NumberConverter.isNumeric(numberOne) || !NumberConverter.isNumeric(numberTwo)) {
-			throw new UnsuportedMathOperationException("Please set a numeric value!");
+			throw new ResourceNotFoundException("Please set a numeric value!");
 		}
 	}
 
